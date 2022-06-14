@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "152153658970",
+    "firebase_url": "https://ulangubi-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ulangubi",
+    "storage_bucket": "ulangubi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152153658970:android:ac0641a5d7060ad6cfea63",
+        "android_client_info": {
+          "package_name": "com.example.projectoubi_41400"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152153658970-452ipfme5vv7kvddqge0q0pmeigkfuc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvMSVRNdx5sOMuhPxdhhMOMOpFNiwF60g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152153658970-452ipfme5vv7kvddqge0q0pmeigkfuc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

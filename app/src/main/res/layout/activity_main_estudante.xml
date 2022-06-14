@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c3e0e5"
+    tools:context=".estudanteMain">
+
+    <TextView
+        android:id="@+id/mainText2"
+        android:layout_width="299dp"
+        android:layout_height="73dp"
+        android:fontFamily="monospace"
+        android:text="Bem-vindo/a!"
+        android:textAlignment="center"
+        android:textColor="#274472"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainText1" />
+
+    <TextView
+        android:id="@+id/mainText1"
+        android:layout_width="352dp"
+        android:layout_height="86dp"
+        android:fontFamily="monospace"
+        android:text="ULangProjeto"
+        android:textAlignment="center"
+        android:textColor="#274472"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/container_estudante_1"
+        android:layout_width="410dp"
+        android:layout_height="381dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainText2"
+        app:layout_constraintVertical_bias="0.066">
+
+        <Button
+            android:id="@+id/professor_main_b3"
+            android:layout_width="308dp"
+            android:layout_height="77dp"
+            android:backgroundTint="#41729f"
+            android:text="Gerir Línguas"
+            android:onClick="OpenGerirLinguas"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeColor="#274472"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/estudante_main_b2"
+            android:layout_width="308dp"
+            android:layout_height="77dp"
+            android:backgroundTint="#41729f"
+            android:text="Estudar"
+            android:onClick="OpenEstudar"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeColor="#274472"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/professor_main_b2"
+            android:layout_width="308dp"
+            android:layout_height="77dp"
+            android:backgroundTint="#41729f"
+            android:text="Definições"
+            android:onClick="OpenDefEstudante"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeColor="#274472"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/estudante_main_b4"
+            android:layout_width="308dp"
+            android:layout_height="77dp"
+            android:backgroundTint="#41729f"
+            android:text="Sair"
+            android:onClick="endActivity"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeColor="#274472"
+            app:strokeWidth="3dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

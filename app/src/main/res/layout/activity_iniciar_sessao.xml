@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c3e0e5"
+    tools:context=".iniciarSessao">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="411dp"
+        android:layout_height="640dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409">
+
+        <TextView
+            android:id="@+id/mainText2"
+            android:layout_width="299dp"
+            android:layout_height="73dp"
+            android:fontFamily="monospace"
+            android:text="INICIAR SESSÃO"
+            android:textAlignment="center"
+            android:textColor="#274472"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/inic_t1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif"
+            android:text="E-mail:"
+            android:textColor="#274472"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/inicEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:hint="Introduza o e-mail"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/inic_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Palavra-passe:"
+            android:textColor="#274472"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/inicPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:gravity="center"
+            android:hint="Introduza a palavra-passe"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/inic_Aviso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#d14519"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/reg_b1"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#41729f"
+            android:onClick="IniciarSessao"
+            android:text="Entrar"
+            android:textColor="#c3e0e5"
+            android:textStyle="bold"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA" />
+
+        <Button
+            android:id="@+id/reg_b2"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#41729f"
+            android:onClick="endActivity"
+            android:text="Voltar"
+            android:textColor="#c3e0e5"
+            android:textStyle="bold"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
