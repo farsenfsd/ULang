@@ -13,6 +13,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.gson.Gson;
+
 public class prof_criar_subcat
  extends AppCompatActivity {
 
@@ -20,6 +22,8 @@ public class prof_criar_subcat
     AlertDialog dialog;
     LinearLayout layout;
     TextView text;
+    Pacote novo;
+    String CatName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +35,11 @@ public class prof_criar_subcat
         text = findViewById(R.id.subcathegory);
         buildDialog();
 
-        String subCatName = getIntent().getExtras().getString("Cathegory_Name");
-        text.setText(subCatName);
+        CatName = getIntent().getExtras().getString("Cathegory_Name");
+        text.setText(CatName);
+        Gson gson = new Gson();
+        String pacote = getIntent().getExtras().getString("Pacote");
+        novo = gson.fromJson(pacote,Pacote.class);
 
     }
 
@@ -83,6 +90,9 @@ public class prof_criar_subcat
 
         nameView.setText(name);
 
+        SubCathegory aux = new SubCathegory();
+        aux.setName(name);
+        novo.addSubCathegory(aux, CatName);
 
         delete.setOnClickListener(new View.OnClickListener(){
             @Override

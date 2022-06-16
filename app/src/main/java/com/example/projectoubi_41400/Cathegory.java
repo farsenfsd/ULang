@@ -35,4 +35,8 @@ public class Cathegory {
         }
         return null;
     }
+
+    public void addSub(SubCathegory aux){
+        subCathegories.add(aux);
+    }
 }

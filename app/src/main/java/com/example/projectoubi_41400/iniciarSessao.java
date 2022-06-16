@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,13 +17,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class iniciarSessao extends AppCompatActivity {
 
+    FirebaseFirestore fcloud;
     private FirebaseAuth mAuth;
     EditText InicEmail;
     EditText InicPw;
-
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,10 @@ public class iniciarSessao extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         InicEmail = findViewById(R.id.inicEmail);
         InicPw = findViewById(R.id.inicPassword);
+
+        Intent i = getIntent();
+        username = getIntent().getExtras().getString("Username");
+
     }
 
     public void IniciarSessao(View v) {
@@ -81,7 +92,30 @@ public class iniciarSessao extends AppCompatActivity {
     }
 
     public void openGestor ( View v) {
+
+        mAuth = FirebaseAuth.getInstance();
+        fcloud = FirebaseFirestore.getInstance();
+
+        try
+        {
+            // Procura perceber se o user está a null
+            String userID = mAuth.getCurrentUser().getUid();
+
+            DocumentReference documentReference = fcloud.collection("Users").document(userID);
+            documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    username = value.getString("username");
+                }
+            });
+        }
+        catch(NullPointerException e)
+        {
+            System.out.print("User a null");
+        }
+
         Intent iActivity = new Intent(this, prof_gestor.class);
+        iActivity.putExtra("Username",username);
         startActivityForResult(iActivity, 1);
     }
 

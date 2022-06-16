@@ -46,4 +46,17 @@ public class Pacote {
         }
         return null;
     }
+
+    public void addCathegory(Cathegory a){
+        cathegories.add(a);
+    }
+
+    public void addSubCathegory(SubCathegory a, String catName){
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, catName)) {
+                cat.addSub(a);
+                break;
+            }
+        }
+    }
 }

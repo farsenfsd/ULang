@@ -12,14 +12,19 @@ public class prof_gestor extends AppCompatActivity {
     FirebaseFirestore fcloud;
     FirebaseAuth mAuth;
 
+    String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_professor_gerir);
+        username = getIntent().getExtras().getString("Username");
+
     }
 
     public void OpenCriarPacote(View v) {
         Intent iActivity = new Intent(this, prof_criar.class);
+        iActivity.putExtra("Username",username);
         startActivityForResult(iActivity, 1);
     }
 

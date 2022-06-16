@@ -15,12 +15,15 @@ import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.gson.Gson;
 
 public class prof_criar extends AppCompatActivity {
 
     Button add;
     AlertDialog dialog;
     LinearLayout layout;
+    String username;
+    Pacote novo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,11 @@ public class prof_criar extends AppCompatActivity {
         add = findViewById(R.id.addCategoria);
         layout = findViewById(R.id.container);
         buildDialog();
+
+        username = getIntent().getExtras().getString("Username");
+
+        novo = new Pacote();
+        novo.setAuthor(username);
 
     }
 
@@ -80,6 +88,10 @@ public class prof_criar extends AppCompatActivity {
 
         nameView.setText(name);
 
+        Cathegory aux = new Cathegory();
+        aux.setName(name);
+        novo.addCathegory(aux);
+
         delete.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -92,6 +104,9 @@ public class prof_criar extends AppCompatActivity {
             public void onClick(View v) {
                 Intent iActivity = new Intent( v.getContext(), prof_criar_subcat.class);
                 iActivity.putExtra("Cathegory_Name", name);
+                Gson gson = new Gson();
+                String pacote = gson.toJson(novo);
+                iActivity.putExtra("Pacote", pacote);
                 startActivityForResult(iActivity, 2);
             }
         });

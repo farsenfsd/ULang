@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.28489583333333335" />
         <entry key="app/src/main/res/layout/activity_def_estudante.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_estudar.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_gerir_linguas.xml" value="0.1921875" />
