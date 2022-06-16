@@ -8,6 +8,8 @@
  - [X] Registro
  - [X] Iniciar Sessão
  - [ ] Criar Pacotes
+    - [ ] Interface de criação.
+    - [ ] Guardar pacote.
  - [ ] Editar Pacotes
  - [ ] Apagar Pacotes
 
@@ -15,7 +17,6 @@
 
 ### Interface Utilizador:
  - [ ] Gerir Pacotes
- |
      - [ ] Descarregar Pacotes
      - [ ] Apagar Pacotes
  - [ ] Estudar
