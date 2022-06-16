@@ -13,23 +13,26 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-public class prof_criar extends AppCompatActivity {
+public class prof_criar_subcat
+ extends AppCompatActivity {
 
     Button add;
     AlertDialog dialog;
     LinearLayout layout;
+    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prof_criar);
+        setContentView(R.layout.activity_prof_criar_subcat);
 
         add = findViewById(R.id.addCategoria);
         layout = findViewById(R.id.container);
+        text = findViewById(R.id.subcathegory);
         buildDialog();
+
+        String subCatName = getIntent().getExtras().getString("Cathegory_Name");
+        text.setText(subCatName);
 
     }
 
@@ -45,6 +48,7 @@ public class prof_criar extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.card, null);
         TextView nameView = view.findViewById(R.id.name);
         nameView.setText("Olá");
+
 
     }
 
@@ -76,23 +80,14 @@ public class prof_criar extends AppCompatActivity {
 
         TextView nameView = view.findViewById(R.id.name);
         Button delete = view.findViewById(R.id.deleteCat);
-        Button edit = view.findViewById(R.id.editCatButton);
 
         nameView.setText(name);
+
 
         delete.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 layout.removeView(view);
-            }
-        });
-
-        edit.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent iActivity = new Intent( v.getContext(), prof_criar_subcat.class);
-                iActivity.putExtra("Cathegory_Name", name);
-                startActivityForResult(iActivity, 2);
             }
         });
 

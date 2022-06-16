@@ -20,7 +20,6 @@
      - [ ] Descarregar Pacotes
      - [ ] Apagar Pacotes
  - [ ] Estudar
- - [ ] Executar a aplicação fora do editor (easy with gradle)
 
 ---
 
