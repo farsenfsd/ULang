@@ -49,6 +49,9 @@
         <activity android:name="prof_criar">
 
         </activity>
+        <activity android:name=".prof_criar_subcat">
+
+        </activity>
     </application>
 
 </manifest>

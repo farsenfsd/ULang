@@ -9,20 +9,31 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class iniciarSessao extends AppCompatActivity {
 
+    FirebaseFirestore fcloud;
     private FirebaseAuth mAuth;
     EditText InicEmail;
     EditText InicPw;
+    String username;
 
+    String TAG = "iniciar_Sessao";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +43,10 @@ public class iniciarSessao extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         InicEmail = findViewById(R.id.inicEmail);
         InicPw = findViewById(R.id.inicPassword);
+
+        Intent i = getIntent();
+        username = getIntent().getExtras().getString("Username");
+
     }
 
     public void IniciarSessao(View v) {
@@ -81,8 +96,34 @@ public class iniciarSessao extends AppCompatActivity {
     }
 
     public void openGestor ( View v) {
-        Intent iActivity = new Intent(this, prof_gestor.class);
-        startActivityForResult(iActivity, 1);
+
+        mAuth = FirebaseAuth.getInstance();
+        fcloud = FirebaseFirestore.getInstance();
+        // Procura perceber se o user está a null
+        String userID = mAuth.getCurrentUser().getUid();
+
+        DocumentReference docRef = fcloud.collection("Users").document(userID);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        username = document.getString("username");
+                        Log.d(TAG,"username = " + username);
+                        Intent iActivity = new Intent(v.getContext(), prof_gestor.class);
+                        iActivity.putExtra("Username",username);
+                        startActivityForResult(iActivity, 1);
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
     }
 
     public void endActivity ( View v) {

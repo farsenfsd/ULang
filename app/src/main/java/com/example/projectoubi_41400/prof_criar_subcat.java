@@ -14,30 +14,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 
-public class prof_criar extends AppCompatActivity {
+public class prof_criar_subcat
+ extends AppCompatActivity {
 
     Button add;
     AlertDialog dialog;
     LinearLayout layout;
-    String username;
+    TextView text;
     Pacote novo;
+    String CatName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prof_criar);
+        setContentView(R.layout.activity_prof_criar_subcat);
 
         add = findViewById(R.id.addCategoria);
         layout = findViewById(R.id.container);
+        text = findViewById(R.id.subcathegory);
         buildDialog();
 
-        username = getIntent().getExtras().getString("Username");
-
-        novo = new Pacote();
-        novo.setAuthor(username);
+        CatName = getIntent().getExtras().getString("Cathegory_Name");
+        text.setText(CatName);
+        Gson gson = new Gson();
+        String pacote = getIntent().getExtras().getString("Pacote");
+        novo = gson.fromJson(pacote,Pacote.class);
 
     }
 
@@ -46,13 +49,14 @@ public class prof_criar extends AppCompatActivity {
     }
 
     public void OpenGuardarPacote(View v) {
-        // Guardar o pacote
+        endActivity(v);
     }
 
     public void Abrir(View v){
         View view = getLayoutInflater().inflate(R.layout.card, null);
         TextView nameView = view.findViewById(R.id.name);
         nameView.setText("Olá");
+
 
     }
 
@@ -63,7 +67,7 @@ public class prof_criar extends AppCompatActivity {
         EditText name = view.findViewById(R.id.catEdit);
 
         builder.setView(view);
-        builder.setTitle("Introduza o nome da categoria")
+        builder.setTitle("Introduza o nome da sub-categoria")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -88,19 +92,19 @@ public class prof_criar extends AppCompatActivity {
 
         nameView.setText(name);
 
-        Cathegory aux = new Cathegory();
+        SubCathegory aux = new SubCathegory();
         aux.setName(name);
-        novo.addCathegory(aux);
+        novo.addSubCathegory(aux, CatName);
 
         delete.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                novo.remCathegory(name);
+                novo.remSubCathegory(name, CatName);
                 layout.removeView(view);
             }
         });
 
-        edit.setOnClickListener(new View.OnClickListener(){
+        edit.setOnClickListener(new View.OnClickListener(){ // Não pronto
             @Override
             public void onClick(View v) {
                 Intent iActivity = new Intent( v.getContext(), prof_criar_subcat.class);
@@ -115,15 +119,15 @@ public class prof_criar extends AppCompatActivity {
         layout.addView(view);
     }
 
-    @Override
-    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if ((requestCode == 2) && (data != null)){
-            Gson gson = new Gson();
+    public void endActivity ( View v) {
 
-            String pacote = data.getExtras().getString("pacote");
-            novo = gson.fromJson(pacote, Pacote.class);
-        }
+        Intent resultIntent = new Intent();
+        Gson gson = new Gson();
+        String pacote = gson.toJson(novo);
+        resultIntent.putExtra("pacote", pacote);
+        setResult(2, resultIntent);
+
+        finish();
     }
 
 }

@@ -22,6 +22,7 @@ public class professorMain extends AppCompatActivity {
     FirebaseFirestore fcloud;
     FirebaseAuth mAuth;
     String userID;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class professorMain extends AppCompatActivity {
             documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
                 @Override
                 public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    String username = value.getString("username");
                     bemvindo.setText("Bem-vindo/a " + value.getString("username"));
                 }
             });
@@ -84,6 +86,7 @@ public class professorMain extends AppCompatActivity {
 
     public void OpenIniciarSessao(View v) {
         Intent iActivity = new Intent(this, iniciarSessao.class);
+        iActivity.putExtra("Username",username);
         startActivityForResult(iActivity, 1);
 
     }

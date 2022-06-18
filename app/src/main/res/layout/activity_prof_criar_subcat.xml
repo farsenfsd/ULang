@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#c3e0e5"
-    tools:context=".prof_criar">
+    tools:context=".prof_criar_subcat">
 
     <TextView
-        android:id="@+id/categorias"
+        android:id="@+id/subcathegory"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:fontFamily="monospace"
-        android:text="CATEGORIAS"
+        android:text="SUB-CATEGORIA"
         android:textAlignment="center"
         android:textColor="#274472"
         android:textSize="28sp"
@@ -48,7 +48,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/addCategoria"
+            android:id="@+id/addSubCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -61,7 +61,7 @@
             app:rippleColor="#33AAAAAA" />
 
         <Button
-            android:id="@+id/addCategoria2"
+            android:id="@+id/voltar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -70,7 +70,7 @@
             android:layout_marginBottom="10dp"
             android:backgroundTint="#41729f"
             android:onClick="OpenGuardarPacote"
-            android:text="Guardar"
+            android:text="Voltar"
             android:textColor="#c3e0e5"
             app:cornerRadius="7dp"
             app:rippleColor="#33AAAAAA" />
