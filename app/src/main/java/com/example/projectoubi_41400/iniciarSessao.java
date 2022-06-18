@@ -13,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +32,8 @@ public class iniciarSessao extends AppCompatActivity {
     EditText InicEmail;
     EditText InicPw;
     String username;
+
+    String TAG = "iniciar_Sessao";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,28 +99,31 @@ public class iniciarSessao extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         fcloud = FirebaseFirestore.getInstance();
+        // Procura perceber se o user está a null
+        String userID = mAuth.getCurrentUser().getUid();
 
-        try
-        {
-            // Procura perceber se o user está a null
-            String userID = mAuth.getCurrentUser().getUid();
-
-            DocumentReference documentReference = fcloud.collection("Users").document(userID);
-            documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-                @Override
-                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                    username = value.getString("username");
+        DocumentReference docRef = fcloud.collection("Users").document(userID);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        username = document.getString("username");
+                        Log.d(TAG,"username = " + username);
+                        Intent iActivity = new Intent(v.getContext(), prof_gestor.class);
+                        iActivity.putExtra("Username",username);
+                        startActivityForResult(iActivity, 1);
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
                 }
-            });
-        }
-        catch(NullPointerException e)
-        {
-            System.out.print("User a null");
-        }
+            }
+        });
 
-        Intent iActivity = new Intent(this, prof_gestor.class);
-        iActivity.putExtra("Username",username);
-        startActivityForResult(iActivity, 1);
     }
 
     public void endActivity ( View v) {

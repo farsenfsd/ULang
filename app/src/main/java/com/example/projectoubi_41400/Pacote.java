@@ -51,10 +51,28 @@ public class Pacote {
         cathegories.add(a);
     }
 
+    public void remCathegory(String CatName) {
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, CatName)) {
+                cathegories.remove(cat);
+                break;
+            }
+        }
+    }
+
     public void addSubCathegory(SubCathegory a, String catName){
         for (Cathegory cat : cathegories) {
             if(Objects.equals(cat.name, catName)) {
                 cat.addSub(a);
+                break;
+            }
+        }
+    }
+
+    public void remSubCathegory(String subcatName, String catName){
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, catName)) {
+                cat.subCathegories.removeIf(subcat -> Objects.equals(subcat.name, subcatName));
                 break;
             }
         }

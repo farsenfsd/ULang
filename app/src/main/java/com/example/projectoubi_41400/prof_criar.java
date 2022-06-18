@@ -95,6 +95,7 @@ public class prof_criar extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                novo.remCathegory(name);
                 layout.removeView(view);
             }
         });
@@ -112,7 +113,17 @@ public class prof_criar extends AppCompatActivity {
         });
 
         layout.addView(view);
+    }
 
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if ((requestCode == 2) && (data != null)){
+            Gson gson = new Gson();
+
+            String pacote = data.getExtras().getString("pacote");
+            novo = gson.fromJson(pacote, Pacote.class);
+        }
     }
 
 }
