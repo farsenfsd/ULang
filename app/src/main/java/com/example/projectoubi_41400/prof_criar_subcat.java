@@ -57,7 +57,6 @@ public class prof_criar_subcat
         TextView nameView = view.findViewById(R.id.name);
         nameView.setText("Olá");
 
-
     }
 
     private void buildDialog(){
@@ -107,8 +106,8 @@ public class prof_criar_subcat
         edit.setOnClickListener(new View.OnClickListener(){ // Não pronto
             @Override
             public void onClick(View v) {
-                Intent iActivity = new Intent( v.getContext(), prof_criar_subcat.class);
-                iActivity.putExtra("Cathegory_Name", name);
+                Intent iActivity = new Intent( v.getContext(), prof_criar_content.class);
+                iActivity.putExtra("Subcathegory_Name", name);
                 Gson gson = new Gson();
                 String pacote = gson.toJson(novo);
                 iActivity.putExtra("Pacote", pacote);
