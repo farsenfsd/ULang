@@ -42,6 +42,13 @@ public class prof_criar_subcat
         String pacote = getIntent().getExtras().getString("Pacote");
         novo = gson.fromJson(pacote,Pacote.class);
 
+        Cathegory current = novo.findCathegory(CatName);
+        if (!current.subCathegories.isEmpty()) {
+            for (SubCathegory subcat : current.getSubCathegories()) {
+                addCard(subcat.getName(), 1);
+            }
+        }
+
     }
 
     public void OpenAbrirDialogo(View v) {
@@ -70,7 +77,7 @@ public class prof_criar_subcat
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        addCard(name.getText().toString());
+                        addCard(name.getText().toString(),0);
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -82,7 +89,7 @@ public class prof_criar_subcat
         dialog = builder.create();
     }
 
-    private void addCard(String name) {
+    private void addCard(String name, int flag) { // Flag = 0 -> adiciona ao objecto pacote; Flag = 1 -> Não adiciona ao objecto pacote.
         View view = getLayoutInflater().inflate(R.layout.card, null);
 
         TextView nameView = view.findViewById(R.id.name);
@@ -91,9 +98,11 @@ public class prof_criar_subcat
 
         nameView.setText(name);
 
-        SubCathegory aux = new SubCathegory();
-        aux.setName(name);
-        novo.addSubCathegory(aux, CatName);
+        if(flag == 0) {
+            SubCathegory aux = new SubCathegory();
+            aux.setName(name);
+            novo.addSubCathegory(aux, CatName);
+        }
 
         delete.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -108,6 +117,7 @@ public class prof_criar_subcat
             public void onClick(View v) {
                 Intent iActivity = new Intent( v.getContext(), prof_criar_content.class);
                 iActivity.putExtra("Subcathegory_Name", name);
+                iActivity.putExtra("Cathegory_Name",CatName);
                 Gson gson = new Gson();
                 String pacote = gson.toJson(novo);
                 iActivity.putExtra("Pacote", pacote);
@@ -127,6 +137,17 @@ public class prof_criar_subcat
         setResult(2, resultIntent);
 
         finish();
+    }
+
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if ((requestCode == 2) && (data != null)){
+            Gson gson = new Gson();
+
+            String pacote = data.getExtras().getString("pacote");
+            novo = gson.fromJson(pacote, Pacote.class);
+        }
     }
 
 }

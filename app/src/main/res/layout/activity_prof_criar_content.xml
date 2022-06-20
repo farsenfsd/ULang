@@ -8,78 +8,12 @@
     android:background="#c3e0e5"
     tools:context=".prof_criar_content">
 
-    <LinearLayout
-        android:id="@+id/buttonsformat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/scrollview"
-        android:orientation="horizontal"
-        android:weightSum="4">
-
-        <Button
-            android:id="@+id/buttonBold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="03dp"
-            android:layout_weight="1"
-            android:backgroundTint="#41729f"
-            android:onClick="TextBold"
-            android:text="Bold"
-            android:textColor="#c3e0e5"
-            android:textSize="12dp"
-            app:cornerRadius="7dp"
-            app:rippleColor="#33AAAAAA" />
-
-        <Button
-            android:id="@+id/buttonUnderline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:backgroundTint="#41729f"
-            android:onClick="TextUnderline"
-            android:text="Sublinhado"
-            android:textColor="#c3e0e5"
-            app:cornerRadius="7dp"
-            android:textSize="12dp"
-            app:rippleColor="#33AAAAAA" />
-
-        <Button
-            android:id="@+id/buttonItallics"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:backgroundTint="#41729f"
-            android:onClick="TextItallic"
-            android:text="Itálico"
-            android:textColor="#c3e0e5"
-            app:cornerRadius="7dp"
-            android:textSize="12dp"
-            app:rippleColor="#33AAAAAA" />
-
-        <Button
-            android:id="@+id/buttonNoFormat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:backgroundTint="#41729f"
-            android:onClick="TextNoFormat"
-            android:text="Limpar"
-            android:textColor="#c3e0e5"
-            app:cornerRadius="7dp"
-            android:textSize="12dp"
-            app:rippleColor="#33AAAAAA" />
-    </LinearLayout>
-
     <TextView
         android:id="@+id/subcathegory"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="7dp"
         android:fontFamily="monospace"
         android:text="SUB-CATEGORIA"
         android:textAlignment="center"
@@ -89,62 +23,14 @@
         app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/buttonsOrientation"
-        android:layout_width="match_parent"
-        android:layout_height="104dp"
-        android:layout_above="@+id/voltarLayout"
-        android:layout_below="@+id/scrollview"
-        android:layout_marginTop="-20dp"
-        android:orientation="horizontal"
-        android:weightSum="3">
-
-        <Button
-            android:id="@+id/buttonLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:backgroundTint="#41729f"
-            android:onClick="TextBold"
-            android:text="Esquerda"
-            android:textColor="#c3e0e5"
-            app:cornerRadius="7dp"
-            app:rippleColor="#33AAAAAA" />
-
-        <Button
-            android:id="@+id/buttonCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:backgroundTint="#41729f"
-            android:onClick="TextUnderline"
-            android:text="Centrar"
-            android:textColor="#c3e0e5"
-            app:cornerRadius="7dp"
-            app:rippleColor="#33AAAAAA" />
-
-        <Button
-            android:id="@+id/buttonRight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:backgroundTint="#41729f"
-            android:onClick="TextItallic"
-            android:text="Direita"
-            android:textColor="#c3e0e5"
-            app:cornerRadius="7dp"
-            app:rippleColor="#33AAAAAA" />
-
-    </LinearLayout>
-
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="562dp"
-        android:layout_below="@+id/subcathegory"
+        android:layout_height="507dp"
+        android:layout_below="@+id/editionButtons"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="90dp"
         android:scrollbars="none">
 
         <EditText
@@ -173,10 +59,147 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#41729f"
+            android:onClick="Guardar"
             android:text="Voltar"
             android:textColor="#c3e0e5"
             app:cornerRadius="7dp"
             app:rippleColor="#33AAAAAA" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editionButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subcathegory"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/buttonsformat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/buttonBold"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="03dp"
+                android:layout_weight="1"
+                android:backgroundTint="#41729f"
+                android:onClick="TextBold"
+                android:text="Bold"
+                android:textColor="#c3e0e5"
+                android:textSize="12dp"
+                app:cornerRadius="7dp"
+                app:rippleColor="#33AAAAAA" />
+
+            <Button
+                android:id="@+id/buttonUnderline"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:backgroundTint="#41729f"
+                android:onClick="TextUnderline"
+                android:text="Sublinhado"
+                android:textColor="#c3e0e5"
+                android:textSize="12dp"
+                app:cornerRadius="7dp"
+                app:rippleColor="#33AAAAAA" />
+
+            <Button
+                android:id="@+id/buttonItallics"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:backgroundTint="#41729f"
+                android:onClick="TextItallic"
+                android:text="Itálico"
+                android:textColor="#c3e0e5"
+                android:textSize="12dp"
+                app:cornerRadius="7dp"
+                app:rippleColor="#33AAAAAA" />
+
+            <Button
+                android:id="@+id/buttonNoFormat"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:backgroundTint="#41729f"
+                android:onClick="TextNoFormat"
+                android:text="Limpar"
+                android:textColor="#c3e0e5"
+                android:textSize="12dp"
+                app:cornerRadius="7dp"
+                app:rippleColor="#33AAAAAA" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonsOrientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/buttonLeft"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#41729f"
+                android:onClick="AlignLeft"
+                android:text="Esquerda"
+                android:textColor="#c3e0e5"
+                app:cornerRadius="7dp"
+                app:rippleColor="#33AAAAAA" />
+
+            <Button
+                android:id="@+id/buttonCenter"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#41729f"
+                android:onClick="AlignCenter"
+                android:text="Centrar"
+                android:textColor="#c3e0e5"
+                app:cornerRadius="7dp"
+                app:rippleColor="#33AAAAAA" />
+
+            <Button
+                android:id="@+id/buttonRight"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#41729f"
+                android:onClick="AlignRight"
+                android:text="Direita"
+                android:textColor="#c3e0e5"
+                app:cornerRadius="7dp"
+                app:rippleColor="#33AAAAAA" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

@@ -47,6 +47,18 @@ public class Pacote {
         return null;
     }
 
+    public SubCathegory findSubCathegory(String subcatName, String catName){
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, catName))
+                for(SubCathegory subcat : cat.subCathegories){
+                    if(Objects.equals(subcat.name, subcatName)){
+                        return subcat;
+                    }
+                }
+        }
+        return null;
+    }
+
     public void addCathegory(Cathegory a){
         cathegories.add(a);
     }
@@ -65,6 +77,18 @@ public class Pacote {
             if(Objects.equals(cat.name, catName)) {
                 cat.addSub(a);
                 break;
+            }
+        }
+    }
+
+    public void setContent(String content, String subcatName, String catName){
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, catName)) {
+                for(SubCathegory subcat : cat.subCathegories){
+                    if(Objects.equals(subcat.name,subcatName)){
+                        subcat.setContent(content);
+                    }
+                }
             }
         }
     }
