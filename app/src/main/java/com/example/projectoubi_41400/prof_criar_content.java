@@ -8,16 +8,23 @@ import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.style.AlignmentSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewStructure;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 
+import com.google.common.html.HtmlEscapers;
 import com.google.gson.Gson;
+
+import java.util.Objects;
 
 public class prof_criar_content extends AppCompatActivity {
 
@@ -47,7 +54,21 @@ public class prof_criar_content extends AppCompatActivity {
         SubCathegory current = novo.findSubCathegory(subcatName, catName);
 
         if(current.content != null && !current.content.isEmpty()) { // Verifica se há algum conteúdo
-            editText.setText(Html.fromHtml(current.getContent(), Html.FROM_HTML_MODE_COMPACT));
+            Spanned text = Html.fromHtml(current.getContent(), Html.FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH);
+            editText.setText(text);
+            if(current.alignment != null && !current.alignment.isEmpty()){
+                switch (current.alignment) {
+                    case "left":
+                        editText.setGravity(Gravity.LEFT);
+                        break;
+                    case "center":
+                        editText.setGravity(Gravity.CENTER);
+                        break;
+                    case "right":
+                        editText.setGravity(Gravity.RIGHT);
+                        break;
+                }
+            }
         }
     }
 
@@ -101,32 +122,41 @@ public class prof_criar_content extends AppCompatActivity {
 
     public void AlignLeft(View v){
 
-        Spannable spannableString = new SpannableStringBuilder(editText.getText());
-        spannableString.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_NORMAL),
-                editText.getSelectionStart(),
-                editText.getSelectionEnd(),
-                0);
-        editText.setText(spannableString);
+        novo.setAlignment("left", subcatName, catName);
+        editText.setGravity(Gravity.LEFT);
+//        Spannable spannableString = new SpannableStringBuilder(editText.getText());
+//        spannableString.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_NORMAL),
+//                editText.getSelectionStart(),
+//                editText.getSelectionEnd(),
+//                0);
+//        editText.setText(spannableString);
     }
 
     public void AlignCenter(View v){
 
-        Spannable spannableString = new SpannableStringBuilder(editText.getText());
-        spannableString.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER),
-                editText.getSelectionStart(),
-                editText.getSelectionEnd(),
-                0);
-        editText.setText(spannableString);
+        novo.setAlignment("center", subcatName, catName);
+        editText.setGravity(Gravity.CENTER);
+
+//        Spannable spannableString = new SpannableStringBuilder(editText.getText());
+//        spannableString.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER),
+//                editText.getSelectionStart(),
+//                editText.getSelectionEnd(),
+//                0);
+//        editText.setText(spannableString);
 
     }
 
     public void AlignRight(View v){
-        Spannable spannableString = new SpannableStringBuilder(editText.getText());
-        spannableString.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_OPPOSITE),
-                editText.getSelectionStart(),
-                editText.getSelectionEnd(),
-                0);
-        editText.setText(spannableString);
+
+        novo.setAlignment("right", subcatName, catName);
+        editText.setGravity(Gravity.RIGHT);
+
+//        Spannable spannableString = new SpannableStringBuilder(editText.getText());
+//        spannableString.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_OPPOSITE),
+//                editText.getSelectionStart(),
+//                editText.getSelectionEnd(),
+//                0);
+//        editText.setText(spannableString);
     }
 
     public void Guardar(View v){
@@ -136,7 +166,7 @@ public class prof_criar_content extends AppCompatActivity {
     public void endActivity ( View v) {
 
         Spannable content = new SpannableStringBuilder(editText.getText());
-        String contentToHTML = Html.toHtml(content, Html.TO_HTML_PARAGRAPH_LINES_INDIVIDUAL);
+        String contentToHTML = Html.toHtml(content, Html.TO_HTML_PARAGRAPH_LINES_CONSECUTIVE);
 
         novo.setContent(contentToHTML,subcatName,catName);
 

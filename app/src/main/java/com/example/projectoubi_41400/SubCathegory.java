@@ -5,10 +5,19 @@ import java.util.ArrayList;
 public class SubCathegory {
     String name;
     String content;
+    String alignment;
 
     public SubCathegory() {
         this.name = "";
         this.content = "";
+    }
+
+    public String getAlignment() {
+        return alignment;
+    }
+
+    public void setAlignment(String alignment) {
+        this.alignment = alignment;
     }
 
     public String getName() {

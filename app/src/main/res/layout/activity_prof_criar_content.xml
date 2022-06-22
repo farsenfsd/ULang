@@ -29,6 +29,7 @@
         android:layout_height="507dp"
         android:layout_below="@+id/editionButtons"
         android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="90dp"
         android:scrollbars="none">

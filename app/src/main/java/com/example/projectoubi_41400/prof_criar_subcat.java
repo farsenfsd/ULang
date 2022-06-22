@@ -11,9 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 
 public class prof_criar_subcat
@@ -68,7 +66,7 @@ public class prof_criar_subcat
 
     private void buildDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View view = getLayoutInflater().inflate(R.layout.dialog,null);
+        View view = getLayoutInflater().inflate(R.layout.dialog_short,null);
 
         EditText name = view.findViewById(R.id.catEdit);
 
@@ -102,6 +100,7 @@ public class prof_criar_subcat
             SubCathegory aux = new SubCathegory();
             aux.setName(name);
             novo.addSubCathegory(aux, CatName);
+            novo.increasePageNumber();
         }
 
         delete.setOnClickListener(new View.OnClickListener(){
@@ -109,6 +108,7 @@ public class prof_criar_subcat
             public void onClick(View v) {
                 novo.remSubCathegory(name, CatName);
                 layout.removeView(view);
+                novo.decreasePageNumber();
             }
         });
 
