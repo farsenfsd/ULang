@@ -55,6 +55,9 @@
         <activity android:name="prof_criar_content">
 
         </activity>
+        <activity android:name=".gerirPacotes">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c3e0e5"
+    tools:context=".gerirPacotes">
+
+    <TextView
+        android:id="@+id/subcathegory"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="monospace"
+        android:text="Gerir Pacotes"
+        android:textAlignment="center"
+        android:textColor="#274472"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/subcathegory"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="monospace"
+        android:text="Select the package to edit"
+        android:textAlignment="center"
+        android:textColor="#274472"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/voltarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_above="@id/spinner"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/voltar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#41729f"
+            android:onClick="Leave"
+            android:text="Voltar"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="7dp"
+            app:rippleColor="#33AAAAAA" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/text"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#274472"
+        android:backgroundTint="#41729f"
+        android:textColor="#c3e0e"
+        app:cornerRadius="15dp"
+        app:rippleColor="#33AAAAAA"
+        app:strokeColor="#274472"
+        app:strokeWidth="3dp" />
+
+</RelativeLayout>
