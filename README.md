@@ -7,9 +7,9 @@
 ### Interface Professor:
  - [X] Registro
  - [X] Iniciar Sessão
- - [ ] Criar Pacotes
-    - [ ] Interface de criação.
-    - [ ] Guardar pacote.
+ - [X] Criar Pacotes
+    - [X] Interface de criação.
+    - [X] Guardar pacote.
  - [ ] Editar Pacotes
  - [ ] Apagar Pacotes
 

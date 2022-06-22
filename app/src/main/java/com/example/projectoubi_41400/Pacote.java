@@ -5,22 +5,40 @@ import java.util.Objects;
 
 public class Pacote {
 
-    String name; // Package Name
+    String title; // Package Name
     String author; // Author of the package
     ArrayList<Cathegory> cathegories;
+    int numberPages;
 
     public Pacote() {
-        this.name = "";
+        this.title = "";
         this.cathegories = new ArrayList<>();
         this.author = "";
+        this.numberPages = 0;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getNumberPages() {
+        return numberPages;
+    }
+
+    public void setNumberPages(int numberPages) {
+        this.numberPages = numberPages;
+    }
+
+    public void increasePageNumber(){
+        this.numberPages++;
+    }
+
+    public void decreasePageNumber(){
+        this.numberPages--;
     }
 
     public String getAuthor() {
@@ -47,6 +65,18 @@ public class Pacote {
         return null;
     }
 
+    public SubCathegory findSubCathegory(String subcatName, String catName){
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, catName))
+                for(SubCathegory subcat : cat.subCathegories){
+                    if(Objects.equals(subcat.name, subcatName)){
+                        return subcat;
+                    }
+                }
+        }
+        return null;
+    }
+
     public void addCathegory(Cathegory a){
         cathegories.add(a);
     }
@@ -69,6 +99,18 @@ public class Pacote {
         }
     }
 
+    public void setContent(String content, String subcatName, String catName){
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, catName)) {
+                for(SubCathegory subcat : cat.subCathegories){
+                    if(Objects.equals(subcat.name,subcatName)){
+                        subcat.setContent(content);
+                    }
+                }
+            }
+        }
+    }
+
     public void remSubCathegory(String subcatName, String catName){
         for (Cathegory cat : cathegories) {
             if(Objects.equals(cat.name, catName)) {
@@ -76,5 +118,30 @@ public class Pacote {
                 break;
             }
         }
+    }
+
+    public void setAlignment(String alignment, String subcatName, String catName){
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, catName)) {
+                for(SubCathegory subcat : cat.subCathegories){
+                    if(Objects.equals(subcat.name,subcatName)){
+                        subcat.setAlignment(alignment);
+                    }
+                }
+            }
+        }
+    }
+
+    public String getAlignment(String subcatName, String catName){
+        for (Cathegory cat : cathegories) {
+            if(Objects.equals(cat.name, catName)) {
+                for(SubCathegory subcat : cat.subCathegories){
+                    if(Objects.equals(subcat.name,subcatName)){
+                        return subcat.getAlignment();
+                    }
+                }
+            }
+        }
+        return null;
     }
 }

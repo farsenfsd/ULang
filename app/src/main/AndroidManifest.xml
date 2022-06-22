@@ -52,6 +52,9 @@
         <activity android:name=".prof_criar_subcat">
 
         </activity>
+        <activity android:name="prof_criar_content">
+
+        </activity>
     </application>
 
 </manifest>
