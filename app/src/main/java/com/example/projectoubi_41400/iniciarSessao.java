@@ -113,7 +113,7 @@ public class iniciarSessao extends AppCompatActivity {
                         username = document.getString("username");
                         Log.d(TAG,"username = " + username);
                         Intent iActivity = new Intent(v.getContext(), prof_gestor.class);
-                        iActivity.putExtra("Username",username);
+                        iActivity.putExtra("Username", username);
                         startActivityForResult(iActivity, 1);
                     } else {
                         Log.d(TAG, "No such document");

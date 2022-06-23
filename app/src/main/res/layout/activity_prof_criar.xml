@@ -45,32 +45,48 @@
         android:layout_above="@id/scrollview"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <Button
             android:id="@+id/addCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#41729f"
             android:onClick="OpenAbrirDialogo"
             android:text="Adicionar"
             android:textColor="#c3e0e5"
             app:cornerRadius="7dp"
+            android:layout_weight="1"
             app:rippleColor="#33AAAAAA" />
 
         <Button
             android:id="@+id/addCategoria2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#41729f"
             android:onClick="OpenDialogoGuardar"
             android:text="Guardar"
             android:textColor="#c3e0e5"
             app:cornerRadius="7dp"
+            android:layout_weight="1"
+            app:rippleColor="#33AAAAAA" />
+
+        <Button
+            android:id="@+id/addCategoria3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#41729f"
+            android:onClick="OpenCancel"
+            android:text="Cancelar"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="7dp"
+            android:layout_weight="1"
             app:rippleColor="#33AAAAAA" />
     </LinearLayout>
 

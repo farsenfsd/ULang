@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="7dp"
         android:fontFamily="monospace"
-        android:text="Gerir Pacotes"
+        android:text="@string/gerir_pacotes"
         android:textAlignment="center"
         android:textColor="#274472"
         android:textSize="28sp"
@@ -31,7 +31,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="7dp"
         android:fontFamily="monospace"
-        android:text="Select the package to edit"
+        android:text="@string/select_the_package_to_edit"
         android:textAlignment="center"
         android:textColor="#274472"
         android:textSize="16sp"
@@ -46,7 +46,8 @@
         android:layout_above="@id/spinner"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="2">
 
         <Button
             android:id="@+id/voltar"
@@ -55,9 +56,25 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
+            android:layout_weight="1"
             android:backgroundTint="#41729f"
             android:onClick="Leave"
-            android:text="Voltar"
+            android:text="@string/voltar"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="7dp"
+            app:rippleColor="#33AAAAAA" />
+
+        <Button
+            android:id="@+id/voltar2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#41729f"
+            android:onClick="OpenEditor"
+            android:text="@string/editar"
             android:textColor="#c3e0e5"
             app:cornerRadius="7dp"
             app:rippleColor="#33AAAAAA" />
@@ -70,12 +87,31 @@
         android:layout_below="@+id/text"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="30dp"
-        android:background="#274472"
-        android:backgroundTint="#41729f"
-        android:textColor="#c3e0e"
-        app:cornerRadius="15dp"
-        app:rippleColor="#33AAAAAA"
-        app:strokeColor="#274472"
-        app:strokeWidth="3dp" />
+        android:background="@drawable/spinner"
+        android:popupBackground="#41729f"
+        android:spinnerMode="dropdown"
+        android:textColor="#c3e0e5" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/spinner"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:text=""
+                android:textColor="#274472"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

@@ -1,20 +1,83 @@
 package com.example.projectoubi_41400;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 
 public class Pacote {
 
     String title; // Package Name
     String author; // Author of the package
+    String authorID;
+    String packageID;
     ArrayList<Cathegory> cathegories;
     int numberPages;
+    Date updateDate;
+    String description;
+    int numberDownloads;
+    float rating;
 
     public Pacote() {
         this.title = "";
         this.cathegories = new ArrayList<>();
         this.author = "";
         this.numberPages = 0;
+        this.authorID = "";
+        this.packageID = "";
+        this.updateDate = new Date();
+        this.description = "";
+        this.numberDownloads = 0;
+        this.rating = 0.0F;
+    }
+
+    public String getAuthorID() {
+        return authorID;
+    }
+
+    public void setAuthorID(String authorID) {
+        this.authorID = authorID;
+    }
+
+    public String getPackageID() {
+        return packageID;
+    }
+
+    public void setPackageID(String packageID) {
+        this.packageID = packageID;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getNumberDownloads() {
+        return numberDownloads;
+    }
+
+    public void setNumberDownloads(int numberDownloads) {
+        this.numberDownloads = numberDownloads;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 
     public String getTitle() {
@@ -143,5 +206,11 @@ public class Pacote {
             }
         }
         return null;
+    }
+
+    @NonNull
+    @Override
+    public String toString(){
+        return title;
     }
 }
