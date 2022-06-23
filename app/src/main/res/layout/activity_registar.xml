@@ -26,7 +26,7 @@
             android:layout_width="299dp"
             android:layout_height="73dp"
             android:fontFamily="monospace"
-            android:text="REGISTAR"
+            android:text="Registar"
             android:textAlignment="center"
             android:textColor="#274472"
             android:textSize="28sp" />

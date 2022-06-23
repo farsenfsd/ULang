@@ -25,14 +25,14 @@
 
 ### Backend:
  - [X] Guardar Contas
- - [ ] Guardar Pacotes
+ - [X] Guardar Pacotes
  - [ ] Descarregar Pacotes
 
 ---
 
 ### Extras:
 
-- [ ] Sistema de ranking de pacotes
+- [] Sistema de ranking de pacotes
 - [ ] Gerir conta
 - [ ] Definições
 
