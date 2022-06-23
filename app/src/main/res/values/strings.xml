@@ -7,4 +7,8 @@
     <string name="remover_pacotes">Remover Pacotes</string>
     <string name="escolha_o_pacote_a_remover">Escolha o pacote a remover</string>
     <string name="remover">Remover</string>
+    <string name="procurar">Procurar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="nome_do_pacote">Nome do Pacote</string>
+    <string name="descarregar">Descarregar</string>
 </resources>

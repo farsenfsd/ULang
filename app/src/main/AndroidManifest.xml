@@ -61,6 +61,9 @@
         <activity android:name=".prof_remover">
 
         </activity>
+        <activity android:name=".estudante_descarregar">
+
+        </activity>
     </application>
 
 </manifest>
