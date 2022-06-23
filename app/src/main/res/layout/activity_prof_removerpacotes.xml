@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#c3e0e5"
-    tools:context=".prof_gerirPacotes">
+    tools:context=".prof_remover">
 
     <TextView
         android:id="@+id/subcathegory"
@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="7dp"
         android:fontFamily="monospace"
-        android:text="@string/gerir_pacotes"
+        android:text="@string/remover_pacotes"
         android:textAlignment="center"
         android:textColor="#274472"
         android:textSize="28sp"
@@ -31,7 +31,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="7dp"
         android:fontFamily="monospace"
-        android:text="@string/select_the_package_to_edit"
+        android:text="@string/escolha_o_pacote_a_remover"
         android:textAlignment="center"
         android:textColor="#274472"
         android:textSize="16sp"
@@ -73,8 +73,8 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:backgroundTint="#41729f"
-            android:onClick="OpenEditor"
-            android:text="@string/editar"
+            android:onClick="OpenRemove"
+            android:text="@string/remover"
             android:textColor="#c3e0e5"
             app:cornerRadius="7dp"
             app:rippleColor="#33AAAAAA" />

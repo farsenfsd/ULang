@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/drawable/spinner.xml" value="0.524" />
         <entry key="app/src/main/res/layout/activity_def_estudante.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/activity_estudar.xml" value="0.1921875" />
-        <entry key="app/src/main/res/layout/activity_gerir_linguas.xml" value="0.1921875" />
+        <entry key="app/src/main/res/layout/activity_gerir_linguas.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_iniciar_sessao.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main_estudante.xml" value="0.3484375" />
@@ -19,6 +19,7 @@
         <entry key="app/src/main/res/layout/activity_prof_criar_subcategoria.xml" value="0.5185688405797102" />
         <entry key="app/src/main/res/layout/activity_prof_gerirPacotes.xml" value="0.54375" />
         <entry key="app/src/main/res/layout/activity_prof_gerirpacotes.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_prof_removerpacotes.xml" value="0.54375" />
         <entry key="app/src/main/res/layout/activity_registar.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/card.xml" value="0.46990291262135925" />
         <entry key="app/src/main/res/layout/dialog.xml" value="0.26393110435663625" />

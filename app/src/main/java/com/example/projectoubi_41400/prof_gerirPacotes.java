@@ -26,7 +26,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
-public class gerirPacotes extends AppCompatActivity {
+public class prof_gerirPacotes extends AppCompatActivity {
 
     FirebaseFirestore fcloud;
     private FirebaseAuth mAuth;
@@ -86,7 +86,6 @@ public class gerirPacotes extends AppCompatActivity {
 
         String data = "Descrição" + ":\n\n" + description;
         desc.setText(data);
-        Toast.makeText(this, data, Toast.LENGTH_LONG).show();
     }
 
     public void OpenEditor(View v){
@@ -98,7 +97,7 @@ public class gerirPacotes extends AppCompatActivity {
             Gson gson = new Gson();
             String pacote = gson.toJson(selecionado);
             iActivity.putExtra("Pacote", pacote);
-            startActivityForResult(iActivity, 1);
+            startActivityForResult(iActivity, 3);
         }
     }
 
@@ -152,6 +151,15 @@ public class gerirPacotes extends AppCompatActivity {
             }
              */
         });
+    }
+
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if ((requestCode == 3) && (data != null)){
+            listaPacotes.clear();
+            getPackages();
+        }
     }
 
     public void endActivity ( View v) {

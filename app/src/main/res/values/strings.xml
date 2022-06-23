@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">ULangProjeto</string>
     <string name="gerir_pacotes">Gerir Pacotes</string>
-    <string name="select_the_package_to_edit">Select the package to edit</string>
+    <string name="select_the_package_to_edit">Escolha o pacote a editar</string>
     <string name="voltar">Voltar</string>
     <string name="editar">Editar</string>
+    <string name="remover_pacotes">Remover Pacotes</string>
+    <string name="escolha_o_pacote_a_remover">Escolha o pacote a remover</string>
+    <string name="remover">Remover</string>
 </resources>

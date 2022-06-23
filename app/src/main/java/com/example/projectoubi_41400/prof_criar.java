@@ -312,7 +312,11 @@ public class prof_criar extends AppCompatActivity {
 
     public void endActivity ( View v) {
         Intent intent = new Intent();
-        setResult(2,intent);
+        if(modo == 1)
+            setResult(3,intent);
+        else {
+            setResult(2, intent);
+        }
         finish();
     }
 

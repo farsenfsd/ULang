@@ -10,8 +10,8 @@
  - [X] Criar Pacotes
     - [X] Interface de criação.
     - [X] Guardar pacote.
- - [ ] Editar Pacotes
- - [ ] Apagar Pacotes
+ - [X] Editar Pacotes
+ - [X] Apagar Pacotes
 
 ---
 
@@ -32,7 +32,7 @@
 
 ### Extras:
 
-- [] Sistema de ranking de pacotes
+- [ ] Sistema de ranking de pacotes
 - [ ] Gerir conta
 - [ ] Definições
 

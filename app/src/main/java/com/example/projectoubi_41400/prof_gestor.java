@@ -30,13 +30,14 @@ public class prof_gestor extends AppCompatActivity {
     }
 
     public void OpenEditarPacote(View v) {
-        Intent iActivity = new Intent(this, gerirPacotes.class);
+        Intent iActivity = new Intent(this, prof_gerirPacotes.class);
         iActivity.putExtra("Username",username);
         startActivityForResult(iActivity, 1);
     }
 
     public void OpenRemoverPacote(View v) {
-        Intent iActivity = new Intent(this, iniciarSessao.class);
+        Intent iActivity = new Intent(this, prof_remover.class);
+        iActivity.putExtra("Username",username);
         startActivityForResult(iActivity, 1);
     }
 

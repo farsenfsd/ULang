@@ -55,7 +55,10 @@
         <activity android:name="prof_criar_content">
 
         </activity>
-        <activity android:name=".gerirPacotes">
+        <activity android:name=".prof_gerirPacotes">
+
+        </activity>
+        <activity android:name=".prof_remover">
 
         </activity>
     </application>
