@@ -12,7 +12,7 @@
         android:id="@+id/subcathegory"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="7dp"
         android:fontFamily="monospace"
         android:text="@string/gerir_pacotes"
@@ -49,8 +49,9 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <Button
+        <ImageView
             android:id="@+id/voltar"
+            android:src="@drawable/ic_arrow_back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"

@@ -30,7 +30,7 @@
         <activity android:name=".gerirLinguas">
 
         </activity>
-        <activity android:name=".estudar">
+        <activity android:name=".estudante_estudar">
 
         </activity>
         <activity android:name=".defEstudante">
@@ -70,6 +70,16 @@
 
         </activity>
         <activity android:name=".estudante_remover">
+
+        </activity>
+        <activity android:name=".estudante_estudar_escolha">
+
+        </activity>
+        <activity android:name=".estudante_estudar_subcat">
+
+        </activity>
+
+        <activity android:name=".estudante_estudar_text">
 
         </activity>
     </application>

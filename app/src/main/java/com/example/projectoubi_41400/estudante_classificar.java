@@ -107,6 +107,7 @@ public class estudante_classificar extends AppCompatActivity {
     public void OpenClassify(View v){
 
         double rating = ratingBar.getRating();
+        oldRating = 0.0;
 
         fcloud = FirebaseFirestore.getInstance();
 
@@ -153,7 +154,7 @@ public class estudante_classificar extends AppCompatActivity {
                                 int nclassificacoes = 0;
 
                                 if (documentSnapshot.get("Nclassificacoes", int.class) != null && documentSnapshot.get("TotalClassificacoes", double.class) != null) {
-                                    total = documentSnapshot.get("TotalClassificacoes", int.class);
+                                    total = documentSnapshot.getDouble("TotalClassificacoes");
                                     nclassificacoes = documentSnapshot.get("Nclassificacoes", int.class);
                                 }
 

@@ -12,7 +12,7 @@
         android:id="@+id/categorias"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="monospace"
         android:text="Descarregar Pacotes"
         android:textAlignment="center"
@@ -78,8 +78,9 @@
                 app:cornerRadius="7dp" />
         </LinearLayout>
 
-        <Button
+        <ImageView
             android:id="@+id/addCategoria3"
+            android:src="@drawable/ic_arrow_back"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_marginHorizontal="40dp"

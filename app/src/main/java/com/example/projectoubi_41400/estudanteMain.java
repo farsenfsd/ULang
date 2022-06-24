@@ -19,7 +19,7 @@ public class estudanteMain extends AppCompatActivity {
     }
 
     public void OpenEstudar(View v) {
-        Intent iActivity = new Intent(this, estudar.class);
+        Intent iActivity = new Intent(this, estudante_estudar_escolha.class);
         startActivityForResult(iActivity, 2);
     }
 
