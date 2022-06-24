@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#c3e0e5"
-    tools:context=".gerirPacotes">
+    tools:context=".prof_gerirPacotes">
 
     <TextView
         android:id="@+id/subcathegory"

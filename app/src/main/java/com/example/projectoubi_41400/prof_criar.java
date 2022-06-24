@@ -1,5 +1,6 @@
 package com.example.projectoubi_41400;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +25,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
+
+import java.text.SimpleDateFormat;
+import java.time.temporal.TemporalAccessor;
 import java.util.Date;
 
 import java.time.format.DateTimeFormatter;
@@ -92,7 +96,6 @@ public class prof_criar extends AppCompatActivity {
     }
 
     public void UploadPackage(View v) {
-        DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm:ss");
         Date createdDate = new Date();
         mAuth = FirebaseAuth.getInstance();
         fcloud = FirebaseFirestore.getInstance();
@@ -101,7 +104,9 @@ public class prof_criar extends AppCompatActivity {
 
         Gson gson = new Gson();
         novo.setAuthorID(userID);
-        novo.setUpdateDate(createdDate);
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatoData = new SimpleDateFormat("yyyy/MM/dd");
+        String dateString = formatoData.format(createdDate);
+        novo.setDateUpdated(dateString);
         DocumentReference docRef;
 
         if(modo == 1)
@@ -126,6 +131,18 @@ public class prof_criar extends AppCompatActivity {
                     packageM.put("NPages", novo.getNumberPages());
                     packageM.put("NDownloads", novo.getNumberDownloads());
                     packageM.put("Rating", novo.getRating());
+                    if(modo == 1) {
+                        packageM.put("Nclassificacoes", task.getResult().get("Nclassificacoes", int.class));
+                        packageM.put("TotalClassificacoes", task.getResult().get("TotalClassificacoes", double.class));
+                        packageM.put("NDownloads", task.getResult().get("NDownloads", int.class));
+                        packageM.put("Rating", task.getResult().get("Rating", int.class));
+                    }
+                    else {
+                        packageM.put("Nclassificacoes", 0);
+                        packageM.put("TotalClassificacoes", 0.0);
+                        packageM.put("NDownloads", novo.getNumberDownloads());
+                        packageM.put("Rating", novo.getRating());
+                    }
                     docRef.set(packageM).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
@@ -135,7 +152,7 @@ public class prof_criar extends AppCompatActivity {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.d("TAG", "(prof_criar) onFailure: " + e.toString());
+                            //Log.d("TAG", "(prof_criar) onFailure: " + e.toString());
                             Toast.makeText(prof_criar.this, "A criação do pacote falhou", Toast.LENGTH_LONG).show();
                             endActivity(v);
                         }
@@ -312,7 +329,11 @@ public class prof_criar extends AppCompatActivity {
 
     public void endActivity ( View v) {
         Intent intent = new Intent();
-        setResult(2,intent);
+        if(modo == 1)
+            setResult(3,intent);
+        else {
+            setResult(2, intent);
+        }
         finish();
     }
 

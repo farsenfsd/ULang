@@ -109,17 +109,17 @@ public class iniciarSessao extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        //Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         username = document.getString("username");
-                        Log.d(TAG,"username = " + username);
-                        Intent iActivity = new Intent(v.getContext(), prof_gestor.class);
+                        //Log.d(TAG,"username = " + username);
+                        Intent iActivity = new Intent(v.getContext(), professorMain.class);
                         iActivity.putExtra("Username", username);
                         startActivityForResult(iActivity, 1);
                     } else {
-                        Log.d(TAG, "No such document");
+                        //Log.d(TAG, "No such document");
                     }
                 } else {
-                    Log.d(TAG, "get failed with ", task.getException());
+                    //Log.d(TAG, "get failed with ", task.getException());
                 }
             }
         });

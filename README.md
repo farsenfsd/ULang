@@ -10,15 +10,16 @@
  - [X] Criar Pacotes
     - [X] Interface de criação.
     - [X] Guardar pacote.
- - [ ] Editar Pacotes
- - [ ] Apagar Pacotes
+ - [X] Editar Pacotes
+ - [X] Apagar Pacotes
 
 ---
 
 ### Interface Utilizador:
- - [ ] Gerir Pacotes
-     - [ ] Descarregar Pacotes
-     - [ ] Apagar Pacotes
+ - [X] Gerir Pacotes
+     - [X] Descarregar Pacotes
+     - [X] Classificar Pacotes
+     - [X] Apagar Pacotes
  - [ ] Estudar
 
 ---
@@ -26,13 +27,13 @@
 ### Backend:
  - [X] Guardar Contas
  - [X] Guardar Pacotes
- - [ ] Descarregar Pacotes
+ - [X] Descarregar Pacotes
 
 ---
 
 ### Extras:
 
-- [] Sistema de ranking de pacotes
+- [X] Sistema de ranking de pacotes
 - [ ] Gerir conta
 - [ ] Definições
 

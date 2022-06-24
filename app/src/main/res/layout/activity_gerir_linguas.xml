@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#c3e0e5"
+    tools:context=".gerirLinguas">
+
+    <TextView
+        android:id="@+id/mainText2"
+        android:layout_width="299dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="608dp"
+        android:fontFamily="monospace"
+        android:text="@string/gerir_pacotes"
+        android:textAlignment="center"
+        android:textColor="#274472"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="361dp"
+        android:layout_height="454dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572">
+
+        <Button
+            android:id="@+id/descarregarb"
+            android:layout_width="308dp"
+            android:layout_height="77dp"
+            android:backgroundTint="#41729f"
+            android:onClick="OpenDescarregarPacotes"
+            android:text="@string/descarregar_pacotes"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeColor="#274472"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/classificarb2"
+            android:layout_width="308dp"
+            android:layout_height="77dp"
+            android:backgroundTint="#41729f"
+            android:onClick="OpenClassificarPacotes"
+            android:text="@string/classificar_pacotes"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeColor="#274472"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/removerb3"
+            android:layout_width="308dp"
+            android:layout_height="77dp"
+            android:backgroundTint="#41729f"
+            android:onClick="OpenRemoverPacote"
+            android:text="Remover Pacote"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeColor="#274472"
+            app:strokeWidth="3dp" />
+
+        <Button
+            android:id="@+id/professor_main_b3"
+            android:layout_width="308dp"
+            android:layout_height="77dp"
+            android:backgroundTint="#41729f"
+            android:onClick="endActivity"
+            android:text="Voltar"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="15dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeColor="#274472"
+            app:strokeWidth="3dp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
