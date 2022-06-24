@@ -192,7 +192,7 @@ public class estudante_descarregar extends AppCompatActivity {
         List<Pacote> aux = original;
         aux.sort(Comparator.comparingDouble(Pacote::getRating));
         Collections.reverse(aux);
-        for(Pacote p : aux){
+        for(Pacote p : original){
             addCard(p);
         }
     }

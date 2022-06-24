@@ -29,7 +29,7 @@
         android:layout_above="@+id/buttons"
         android:layout_below="@id/categorias"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="5dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -53,7 +53,7 @@
         <LinearLayout
             android:id="@+id/searchbuttons"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:orientation="horizontal"
@@ -61,18 +61,19 @@
 
             <EditText
                 android:id="@+id/searchText"
-                android:layout_width="279dp"
-                android:layout_height="66dp"
-                android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
                 android:hint="@string/nome_do_pacote"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
             <ImageView
                 android:src="@drawable/ic_search"
-                android:layout_width="75dp"
-                android:layout_height="59dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
                 android:onClick="Search"
                 android:text="@string/procurar"
                 app:cornerRadius="7dp" />

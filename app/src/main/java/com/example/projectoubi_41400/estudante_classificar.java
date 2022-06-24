@@ -74,7 +74,8 @@ public class estudante_classificar extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 selecionado = (Pacote) adapterView.getSelectedItem();
-                displayDescription(selecionado);
+                if(selecionado != null)
+                    displayDescription(selecionado);
             }
 
             @Override
