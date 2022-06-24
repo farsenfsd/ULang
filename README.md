@@ -20,7 +20,7 @@
      - [X] Descarregar Pacotes
      - [X] Classificar Pacotes
      - [X] Apagar Pacotes
- - [ ] Estudar
+ - [X] Estudar
 
 ---
 
@@ -33,7 +33,9 @@
 
 ### Extras:
 
-- [X] Sistema de ranking de pacotes
+- [X] Sistema de pontuação de pacotes.
+- [X] Opções de formatação do texto
+- [X] Ícones para vários butões.
 - [ ] Gerir conta
 - [ ] Definições
 

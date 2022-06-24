@@ -52,8 +52,9 @@
         android:layout_marginBottom="0dp"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/voltar"
+            android:src="@drawable/ic_arrow_back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
@@ -61,7 +62,6 @@
             android:layout_marginBottom="10dp"
             android:backgroundTint="#41729f"
             android:onClick="Guardar"
-            android:text="Voltar"
             android:textColor="#c3e0e5"
             app:cornerRadius="7dp"
             app:rippleColor="#33AAAAAA" />
@@ -77,73 +77,69 @@
         <LinearLayout
             android:id="@+id/buttonsformat"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:weightSum="4">
 
-            <Button
+            <ImageView
                 android:id="@+id/buttonBold"
-                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/ic_bold"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="03dp"
                 android:layout_weight="1"
                 android:backgroundTint="#41729f"
+                android:clickable="true"
                 android:onClick="TextBold"
-                android:text="Bold"
                 android:textColor="#c3e0e5"
-                android:textSize="12dp"
                 app:cornerRadius="7dp"
                 app:rippleColor="#33AAAAAA" />
 
-            <Button
+            <ImageView
                 android:id="@+id/buttonUnderline"
-                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/ic_underline"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="3dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="1"
                 android:backgroundTint="#41729f"
+                android:clickable="true"
                 android:onClick="TextUnderline"
-                android:text="Sublinhado"
                 android:textColor="#c3e0e5"
-                android:textSize="12dp"
                 app:cornerRadius="7dp"
                 app:rippleColor="#33AAAAAA" />
 
-            <Button
+            <ImageView
                 android:id="@+id/buttonItallics"
-                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/ic_itallic"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="3dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="1"
                 android:backgroundTint="#41729f"
+                android:clickable="true"
                 android:onClick="TextItallic"
-                android:text="Itálico"
                 android:textColor="#c3e0e5"
-                android:textSize="12dp"
                 app:cornerRadius="7dp"
                 app:rippleColor="#33AAAAAA" />
 
-            <Button
+            <ImageView
                 android:id="@+id/buttonNoFormat"
-                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/ic_clear"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
                 android:backgroundTint="#41729f"
+                android:clickable="true"
                 android:onClick="TextNoFormat"
-                android:text="Limpar"
                 android:textColor="#c3e0e5"
-                android:textSize="12dp"
                 app:cornerRadius="7dp"
                 app:rippleColor="#33AAAAAA" />
         </LinearLayout>
@@ -151,50 +147,50 @@
         <LinearLayout
             android:id="@+id/buttonsOrientation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="1dp"
             android:orientation="horizontal"
             android:weightSum="3">
 
-            <Button
+            <ImageView
                 android:id="@+id/buttonLeft"
-                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/ic_align_left"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#41729f"
+                android:clickable="true"
                 android:onClick="AlignLeft"
-                android:text="Esquerda"
                 android:textColor="#c3e0e5"
                 app:cornerRadius="7dp"
                 app:rippleColor="#33AAAAAA" />
 
-            <Button
+            <ImageView
                 android:id="@+id/buttonCenter"
-                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/ic_align_center"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#41729f"
+                android:clickable="true"
                 android:onClick="AlignCenter"
-                android:text="Centrar"
                 android:textColor="#c3e0e5"
                 app:cornerRadius="7dp"
                 app:rippleColor="#33AAAAAA" />
 
-            <Button
+            <ImageView
                 android:id="@+id/buttonRight"
-                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/ic_align_right"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="#41729f"
+                android:clickable="true"
                 android:onClick="AlignRight"
-                android:text="Direita"
                 android:textColor="#c3e0e5"
                 app:cornerRadius="7dp"
                 app:rippleColor="#33AAAAAA" />

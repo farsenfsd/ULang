@@ -15,4 +15,6 @@
     <string name="escolha_o_pacote_a_classificar">Escolha o pacote a classificar</string>
     <string name="classificar">Classificar</string>
     <string name="descarregar_pacotes">Descarregar Pacotes</string>
+    <string name="escolha_o_pacote_a_estudar">Escolha o pacote a estudar</string>
+    <string name="estudar">estudar</string>
 </resources>

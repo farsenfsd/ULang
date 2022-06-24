@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#274472"
+    tools:context=".estudante_estudar_text">
+
+    <TextView
+        android:id="@+id/subcathegory"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="monospace"
+        android:text="SUB-CATEGORIA"
+        android:textAlignment="center"
+        android:textColor="#c3e0e5"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/voltarLayout"
+        android:layout_below="@+id/subcathegory"
+        android:layout_marginTop="40dp"
+        android:background="#274472"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:text="Olá isto é um exemplo"
+            android:textColor="#c3e0e5"
+            android:textSize="18sp" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/voltarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="#41729f"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/voltar"
+            android:src="@drawable/ic_arrow_back_clara"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#c3e0e5"
+            android:onClick="endActivity"
+            android:textColor="#274472"
+            app:cornerRadius="7dp"
+            app:rippleColor="#33AAAAAA" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -25,7 +25,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 import com.google.gson.Gson;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -101,22 +111,24 @@ public class estudante_remover extends AppCompatActivity {
 
         selecionado = (Pacote) spinner.getSelectedItem();
 
-        String filename = selecionado.getPackageID() + ".json";
+        if( selecionado != null) {
+            String filename = selecionado.getPackageID() + ".json";
 
-        File path = getApplicationContext().getFilesDir();
-        File Packages = new File(path +"/Packages");
-        File toDelete = new File(Packages, filename);
+            File path = getApplicationContext().getFilesDir();
+            File Packages = new File(path + "/Packages");
+            File toDelete = new File(Packages, filename);
 
-        boolean a = toDelete.delete();
-        if(a){
-            Log.d(TAG,"Deleted file: " + toDelete.toString());
+            boolean a = toDelete.delete();
+            if (a) {
+                Log.d(TAG, "Deleted file: " + toDelete.toString());
+            }
+
+            listaPacotes.remove(selecionado);
+            adapter.clear();
+            adapter.addAll(listaPacotes);
+            adapter.notifyDataSetChanged();
+            adapter.notifyDataSetChanged();
         }
-
-        listaPacotes.remove(selecionado);
-        adapter.clear();
-        adapter.addAll(listaPacotes);
-        adapter.notifyDataSetChanged();
-        adapter.notifyDataSetChanged();
     }
 
 
@@ -136,6 +148,33 @@ public class estudante_remover extends AppCompatActivity {
         return filenames;
     }
 
+    public Pacote readFile(String filename){
+
+        File path = getApplicationContext().getFilesDir();
+        File Packages = new File(path +"/Packages");
+
+        Pacote aux;
+        Gson gson = new Gson();
+
+        String ret = "";
+
+            try {
+                Reader reader = Files.newBufferedReader( Paths.get(Packages + "/" + filename));
+                //FileInputStream reader = new FileInputStream(new File(Packages, filename));
+                aux = gson.fromJson(reader, Pacote.class);
+                reader.close();
+                Log.d(TAG,aux.toString());
+                return aux;
+            }
+            catch (FileNotFoundException e) {
+                Log.e("login activity", "File not found: " + e.toString());
+            } catch (IOException e) {
+                Log.e("login activity", "Can not read file: " + e.toString());
+            }
+
+            return null;
+    }
+
     public void getPackages() {
 
         fcloud = FirebaseFirestore.getInstance();
@@ -147,27 +186,12 @@ public class estudante_remover extends AppCompatActivity {
         for (String file : filenames) {
             String[] aux;
             aux = file.split("\\.");
-
-            DocumentReference auxDocs = fcloud.collection("Packages").document(aux[0]);
-
-            auxDocs.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        DocumentSnapshot document = task.getResult();
-                        if (document.exists()) {
-                            String aux = document.getString("PackageGSON");
-                            Pacote aux2 = gson.fromJson(aux, Pacote.class);
-                            listaPacotes.add(aux2);
-                        }
-                        adapter.clear();
-                        adapter.addAll(listaPacotes);
-                        adapter.notifyDataSetChanged();
-                        adapter.notifyDataSetChanged();
-                    }
-                }
-            });
+            listaPacotes.add(readFile(file));
         }
+        adapter.clear();
+        adapter.addAll(listaPacotes);
+        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();
     }
 
     public void endActivity ( View v) {
