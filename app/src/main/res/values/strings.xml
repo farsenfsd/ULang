@@ -9,6 +9,10 @@
     <string name="remover">Remover</string>
     <string name="procurar">Procurar</string>
     <string name="cancelar">Cancelar</string>
-    <string name="nome_do_pacote">Nome do Pacote</string>
+    <string name="nome_do_pacote">Termo a pesquisar</string>
     <string name="descarregar">Descarregar</string>
+    <string name="classificar_pacotes">Classificar Pacotes</string>
+    <string name="escolha_o_pacote_a_classificar">Escolha o pacote a classificar</string>
+    <string name="classificar">Classificar</string>
+    <string name="descarregar_pacotes">Descarregar Pacotes</string>
 </resources>

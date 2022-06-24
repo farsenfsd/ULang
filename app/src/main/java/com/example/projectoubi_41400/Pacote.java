@@ -12,24 +12,32 @@ public class Pacote {
     String author; // Author of the package
     String authorID;
     String packageID;
+    String dateUpdated;
     ArrayList<Cathegory> cathegories;
     int numberPages;
-    Date updateDate;
     String description;
     int numberDownloads;
-    float rating;
+    double rating;
 
     public Pacote() {
         this.title = "";
         this.cathegories = new ArrayList<>();
         this.author = "";
         this.numberPages = 0;
+        this.dateUpdated = "";
         this.authorID = "";
         this.packageID = "";
-        this.updateDate = new Date();
         this.description = "";
         this.numberDownloads = 0;
-        this.rating = 0.0F;
+        this.rating = 0.0;
+    }
+
+    public String getDateUpdated() {
+        return dateUpdated;
+    }
+
+    public void setDateUpdated(String dateUpdated) {
+        this.dateUpdated = dateUpdated;
     }
 
     public String getAuthorID() {
@@ -48,14 +56,6 @@ public class Pacote {
         this.packageID = packageID;
     }
 
-    public Date getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -72,11 +72,11 @@ public class Pacote {
         this.numberDownloads = numberDownloads;
     }
 
-    public float getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 

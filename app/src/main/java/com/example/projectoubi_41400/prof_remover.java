@@ -118,7 +118,7 @@ public class prof_remover extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
 
                 }
-                Log.d(TAG,"dentro da lista: " + listaPacotes.toString());
+                //Log.d(TAG,"dentro da lista: " + listaPacotes.toString());
             }
         });
     }

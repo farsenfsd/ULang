@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c3e0e5"
+    tools:context=".estudante_remover">
+
+    <TextView
+        android:id="@+id/subcathegory"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="monospace"
+        android:text="@string/remover_pacotes"
+        android:textAlignment="center"
+        android:textColor="#274472"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/subcathegory"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="monospace"
+        android:text="@string/escolha_o_pacote_a_remover"
+        android:textAlignment="center"
+        android:textColor="#274472"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/voltarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_above="@id/spinner"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/voltar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#41729f"
+            android:onClick="Leave"
+            android:text="@string/voltar"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="7dp"
+            app:rippleColor="#33AAAAAA" />
+
+        <Button
+            android:id="@+id/voltar2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#41729f"
+            android:onClick="OpenRemove"
+            android:text="@string/remover"
+            android:textColor="#c3e0e5"
+            app:cornerRadius="7dp"
+            app:rippleColor="#33AAAAAA" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/text"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/spinner"
+        android:popupBackground="#41729f"
+        android:spinnerMode="dropdown"
+        android:textColor="#c3e0e5" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/spinner"
+        android:layout_marginTop="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:text=""
+                android:textColor="#274472"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

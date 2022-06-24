@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -122,34 +123,8 @@ public class prof_gerirPacotes extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
 
                 }
-                Log.d(TAG,"dentro da lista: " + listaPacotes.toString());
+                //Log.d(TAG,"dentro da lista: " + listaPacotes.toString());
             }
-
-            /*
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentReference documentReference = fcloud.collection("Packages").document();
-                    Map<String, Object> packageM = new HashMap<>();
-                    packageM.put("NDownloads", 0);
-                    packageM.put("Rating", 0);
-                    documentReference.set(packageM).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Toast.makeText(gerirPacotes.this, "O pacote foi criado com sucesso", Toast.LENGTH_LONG).show();
-                            endActivity(v);
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d("TAG", "(prof_criar) onFailure: " + e.toString());
-                            Toast.makeText(gerirPacotes.this, "A criação do pacote falhou", Toast.LENGTH_LONG).show();
-                            endActivity(v);
-                        }
-                    });
-                }
-            }
-             */
         });
     }
 

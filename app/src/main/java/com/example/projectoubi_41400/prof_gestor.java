@@ -50,9 +50,6 @@ public class prof_gestor extends AppCompatActivity {
         Intent intent = new Intent();
         setResult(2,intent);
 
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseAuth.getInstance().signOut();
-
         finish();
     }
 }

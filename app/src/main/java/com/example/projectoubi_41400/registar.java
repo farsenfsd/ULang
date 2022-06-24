@@ -104,7 +104,7 @@ public class registar extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Log.d("TAG","(REGISTAR) onFailure: " + e.toString());
+                                    //Log.d("TAG","(REGISTAR) onFailure: " + e.toString());
                                     Toast.makeText(registar.this, "O registro falhou", Toast.LENGTH_LONG).show();
                                 }
                             });
