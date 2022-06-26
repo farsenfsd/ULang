@@ -36,8 +36,6 @@
 - [X] Sistema de pontuação de pacotes.
 - [X] Opções de formatação do texto
 - [X] Ícones para vários butões.
-- [ ] Gerir conta
-- [ ] Definições
 
 ---
 
