@@ -1,6 +1,5 @@
 package com.example.projectoubi_41400;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import android.app.Activity;
 import android.os.Bundle;

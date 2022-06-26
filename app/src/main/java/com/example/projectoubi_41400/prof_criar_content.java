@@ -4,27 +4,19 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Html;
-import android.text.Layout;
 import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
-import android.text.style.AlignmentSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewStructure;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.text.HtmlCompat;
 
-import com.google.common.html.HtmlEscapers;
 import com.google.gson.Gson;
-
-import java.util.Objects;
 
 public class prof_criar_content extends AppCompatActivity {
 

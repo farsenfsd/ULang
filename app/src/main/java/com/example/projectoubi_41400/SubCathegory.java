@@ -1,6 +1,5 @@
 package com.example.projectoubi_41400;
 
-import java.util.ArrayList;
 
 public class SubCathegory {
     String name;
