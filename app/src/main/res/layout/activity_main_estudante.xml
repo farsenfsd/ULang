@@ -79,19 +79,6 @@
             app:strokeWidth="3dp" />
 
         <Button
-            android:id="@+id/professor_main_b2"
-            android:layout_width="308dp"
-            android:layout_height="77dp"
-            android:backgroundTint="#41729f"
-            android:text="Definições"
-            android:onClick="OpenDefEstudante"
-            android:textColor="#c3e0e5"
-            app:cornerRadius="15dp"
-            app:rippleColor="#33AAAAAA"
-            app:strokeColor="#274472"
-            app:strokeWidth="3dp" />
-
-        <Button
             android:id="@+id/estudante_main_b4"
             android:layout_width="308dp"
             android:layout_height="77dp"

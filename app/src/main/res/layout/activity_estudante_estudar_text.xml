@@ -58,7 +58,6 @@
 
         <ImageView
             android:id="@+id/voltar"
-            android:src="@drawable/ic_arrow_back_clara"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
@@ -67,6 +66,7 @@
             android:layout_marginBottom="10dp"
             android:backgroundTint="#c3e0e5"
             android:onClick="endActivity"
+            android:src="@drawable/ic_arrow_back_clara"
             android:textColor="#274472"
             app:cornerRadius="7dp"
             app:rippleColor="#33AAAAAA" />

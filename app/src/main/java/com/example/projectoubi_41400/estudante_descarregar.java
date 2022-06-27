@@ -169,7 +169,7 @@ public class estudante_descarregar extends AppCompatActivity {
             FileOutputStream writer = new FileOutputStream(new File(Packages, filename));
             writer.write(content.getBytes());
             writer.close();
-            Toast.makeText(getApplicationContext(), "Package downloaded sucessfully!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Pacote descarregado com sucesso!", Toast.LENGTH_LONG).show();
         } catch (Exception e){
             e.printStackTrace();
         }

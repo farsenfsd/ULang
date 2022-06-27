@@ -102,7 +102,7 @@
             android:layout_height="77dp"
             android:backgroundTint="#41729f"
             android:onClick="endActivity"
-            android:text="Voltar"
+            android:text="Sair"
             android:textColor="#c3e0e5"
             app:cornerRadius="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
